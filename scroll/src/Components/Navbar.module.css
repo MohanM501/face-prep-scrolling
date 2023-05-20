@@ -6,12 +6,14 @@
 }
 #container button{
     padding:15px;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     background-color: aqua;
 }
-#container>div:first-child>h4{
+#container>div:first-child>h3{
     color: blue;
+    cursor: pointer;
+    
 }
 #container>div:nth-child(2){
    display: flex;

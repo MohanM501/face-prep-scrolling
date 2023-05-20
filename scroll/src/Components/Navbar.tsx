@@ -1,15 +1,21 @@
 import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import styles from './Navbar.module.css';
 
 const Navbar = () => {
+  const navigate=useNavigate();
+  const handleLogin=()=>{
+      navigate("/login");
+  }
+
   return (
     <div id={styles.container}>
         <div>
-            <h4>Infinite Scrolling</h4>
+            <Link to="/"><h3>Infinite Scrolling</h3></Link>
         </div>
         <div>
-            <button>Home</button>
-            <button>Login</button>
+            <Link to="/home"><button>Home</button></Link>
+            <button onClick={handleLogin}>Login</button>
         </div>   
     </div>
   )
