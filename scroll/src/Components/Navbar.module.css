@@ -1,0 +1,19 @@
+#container{
+    padding:20px 40px 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#container button{
+    padding:15px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: aqua;
+}
+#container>div:first-child>h4{
+    color: blue;
+}
+#container>div:nth-child(2){
+   display: flex;
+   gap:40px;
+}
