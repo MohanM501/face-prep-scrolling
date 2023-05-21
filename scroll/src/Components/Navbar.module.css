@@ -20,3 +20,19 @@
    gap:40px;
    padding-left: 15px;
 }
+
+@media (max-width:600px){
+    #container{
+        padding:30px;
+    }
+    #container button{
+        padding:5px;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: aqua;
+    }
+    #container>div:nth-child(2){
+        display: flex;
+        gap:10px;
+     }
+}

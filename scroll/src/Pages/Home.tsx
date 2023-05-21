@@ -26,7 +26,7 @@ const Home: React.FC = () => {
   let [page,setPage]=useState(1);
   let [isLoading,setLoading]=useState(false);
   
-  let getData=async(page:number)=>{
+  let getData=(page:number)=>{
      
     setLoading(true);
     setTimeout(()=>{
@@ -46,7 +46,10 @@ const Home: React.FC = () => {
   let handleScroll=()=>{
       if(window.innerHeight+document.documentElement.scrollTop+1 >= document.documentElement.scrollHeight){
         console.log("at the bottom of the page");
-        getData(page);
+        if(!isLoading){
+            getData(page);
+        }
+        
       }
      
   }

@@ -2,9 +2,10 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-bottom: 30px;
+    margin:0px 30px 30px 30px;
     height:100px;
     border:2px solid grey;
+    
 }
 
 .list>div{
@@ -15,7 +16,12 @@
     .list{
         height: auto;
         margin-bottom: 10px;
-        
     }
-   
+}
+
+@media (min-width:601px) and (max-width:1000px){
+    .list{
+        height: 80px;
+        margin-bottom: 20px;
+    }
 }
