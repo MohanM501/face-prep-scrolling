@@ -14,8 +14,8 @@
 
 @media (max-width:600px){
     .list{
-        height: auto;
-        margin-bottom: 10px;
+        height: 80px;
+        margin-bottom: 20px;
     }
 }
 

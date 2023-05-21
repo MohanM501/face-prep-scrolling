@@ -43,6 +43,15 @@ const Home: React.FC = () => {
          
   }
   
+//   let debounce=(func:Function,delay:number)=>{
+//       let timer:ReturnType<typeof setTimeout>
+//       return()=>{
+//           clearTimeout(timer);
+//           timer=setTimeout(()=>{
+//             func;
+//           },delay)
+//       }
+//   }
 
   let handleScroll=()=>{
       if(window.innerHeight+document.documentElement.scrollTop+1 >= document.documentElement.scrollHeight){
