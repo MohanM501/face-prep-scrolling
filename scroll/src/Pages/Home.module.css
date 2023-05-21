@@ -1,0 +1,10 @@
+.list{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.list>div{
+    font-size: 20px;
+}

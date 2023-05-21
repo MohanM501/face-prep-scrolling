@@ -8,13 +8,13 @@ interface credType{
 
 const Login = () => {
     const {login,isAuthenticated}=useContext(AuthContext);
-    const [credentials,setCredentials]=useState<credType>({});
+    const [credentials,setCredentials]=useState<credType>({username:"foo",password:"bar"});
     
     const callLogin=()=>{
         const {username,password}=credentials;
         if(username==="foo" && password==="bar"){
             login();
-            alert("succesfully logged in")
+            // alert("succesfully logged in")
         }else{
             alert("Invalid Credentials");
         }  
@@ -28,9 +28,9 @@ const Login = () => {
   return (
     <div>
         <h2>User Login</h2>
-        <input name="username" type="string" onChange={handleChange} placeholder="Enter your username"/>
+        <input name="username"  type="string" onChange={handleChange} placeholder="Enter your username (foo)"/>
         <br/>
-        <input name="password"  type="string" onChange={handleChange} placeholder="Enter your password"/>
+        <input name="password"  type="password" onChange={handleChange} placeholder="Enter your password (bar)"/>
         <br/>
         <br/>
         <button onClick={callLogin}>Login</button>
