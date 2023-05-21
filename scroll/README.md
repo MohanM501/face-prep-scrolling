@@ -40,4 +40,4 @@ The Auth Context provides the login, logout, and isAuthenticated functions to ma
 
 Future Scope:
 
-- Optimizing the number of API Calls;
+- Optimizing the number of API Calls 
