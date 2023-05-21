@@ -4,9 +4,12 @@ import { AuthContext } from './AuthContext';
 import styles from './Navbar.module.css';
 
 const Navbar = () => {
- const {isAuthenticated}=useContext(AuthContext);
+ const {isAuthenticated,logout}=useContext(AuthContext);
   const navigate=useNavigate();
   const handleLogin=()=>{
+      if(isAuthenticated){
+          logout();
+      }
       navigate("/login");
   }
  
