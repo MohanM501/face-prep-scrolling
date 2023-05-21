@@ -26,42 +26,41 @@ const Home: React.FC = () => {
   let [page,setPage]=useState(1);
   let [isLoading,setLoading]=useState(false);
   
-  let getData=(page:number)=>{
+  let getData=async(page:number)=>{
      
-     setLoading(true);
-     setTimeout(()=>{
-         
-         axios.get(`${url}&page=${page}`).then((r)=>{
+    setLoading(true);
+    setTimeout(()=>{
+        axios.get(`${url}&page=${page}`).then((r)=>{
             console.log(r.data.results,"results r.data");
             setData((prevData)=>[...prevData,...r.data.results]);  
-          }).catch((err)=>{
-              console.log(err,"error");
-          })
-          setLoading(false);
-     },1000)
+        }).catch((err)=>{
+            console.log(err,"error");
+        })
+        setLoading(false);
+        setPage((prevPage)=>prevPage+1);
+    },1000)
+    
          
   }
 
   let handleScroll=()=>{
-      console.log("hi scroll")
-      if(window.innerHeight+window.scrollY===document.documentElement.scrollHeight){
-        // Reached the bottom of the page ; so fetch data;
-        setPage((prevPage)=>prevPage+1);
+      if(window.innerHeight+document.documentElement.scrollTop+1 >= document.documentElement.scrollHeight){
+        console.log("at the bottom of the page");
+        getData(page);
       }
-      console.log(window.innerHeight,document.documentElement.scrollTop,document.documentElement.offsetHeight,window.scrollY,document.documentElement.scrollHeight,"window.innerHeight scrollTop offsetheight,scrollY, scrollHeight")
+     
   }
 
   useEffect(()=>{
     window.addEventListener('scroll',handleScroll);
     return () => {
-        // Cleanup the event listener when the component unmounts
         window.removeEventListener('scroll', handleScroll);
     };
 
   },[])
   useEffect(()=>{
     getData(page);
-  },[page])
+  },[])
   
 console.log(data,"data",page,"page")
   return (
@@ -71,6 +70,7 @@ console.log(data,"data",page,"page")
           data.length>0 && data.map((item,ind)=>{
               return (
                   <div key={ind} className={HomeStyles.list} >
+                      <p>{ind+1}</p>
                       <div> {item.name.first}{" "}{item.name.last}</div>
                       <img src={item.picture.thumbnail} />
                   </div>

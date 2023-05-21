@@ -18,3 +18,21 @@
     border-radius: 50%;
     animation: spinner 1.5s linear infinite;
 }
+
+@media (max-width:600px) {
+    .spin{
+        width:30px;
+        height:30px;
+        border: 5px solid #f3f3f3;
+        border-top: 5px solid orange;
+    }
+}
+
+@media (min-width:601px) and (max-width:1000px){
+    .spin{
+        width:40px;
+        height:40px;
+        border: 5px solid #f3f3f3;
+        border-top: 5px solid orange;
+    }
+}
