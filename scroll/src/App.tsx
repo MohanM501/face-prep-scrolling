@@ -7,6 +7,7 @@ import AllPages from './Pages/AllPages';
 function App() {
   return (
     <div className="App">
+      {/* Allowing Authcontext values to be access within the Navbar and AllPages */}
       <AuthContextProvider>
         <Navbar/>
         <AllPages/>

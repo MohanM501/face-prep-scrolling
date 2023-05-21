@@ -1,0 +1,36 @@
+.container{
+    width: 50%;
+    margin: auto;
+    border:2px solid aqua;
+    padding:10px 0px 20px 0px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.container>input{
+    height:40px;
+    border-radius: 10px;
+    text-align: center;
+    color:blue;
+}
+
+.container>button{
+    cursor: pointer;
+    padding:10px 20px 10px 20px;
+    border-radius: 10px;
+    background-color: aqua;
+}
+
+.container>button:hover{
+    background-color: green;
+    color:white;
+}
+@media (max-width:600px){
+    .container{
+        width:95%;
+        padding:0px 0px 10px 0px;
+        border:1px solid aqua;
+    }
+    .container>input{
+        height:20px;
+        border-radius: 5px;
+    }
+}

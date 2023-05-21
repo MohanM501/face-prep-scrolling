@@ -1,5 +1,7 @@
 import React, { createContext, useState } from 'react';
 
+// AuthContext provides access to isAuthenticated, logout, and login for every component as global state;  
+
 type AuthContextType = {
   isAuthenticated: boolean;
   login: () => void;

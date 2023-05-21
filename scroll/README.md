@@ -1,46 +1,43 @@
-# Getting Started with Create React App
+Infinite Scrolling
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project demonstrates how to implement infinite scrolling in a React application. Infinite scrolling is a technique that loads additional content automatically as the user scrolls down the page, providing a smooth and continuous browsing experience.
 
-## Available Scripts
+Features
 
-In the project directory, you can run:
+Fetches data from an API in chunks as the user scrolls.
 
-### `npm start`
+Dynamically adds new data to the existing list of items.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Provided facke login functionality and only user who logged in can access the Home Page.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+Technologies Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+React: A JavaScript library for building user interfaces.
 
-### `npm run build`
+TypeScript: A typed superset of JavaScript that compiles to plain JavaScript.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+axios: A promise-based HTTP client for making API requests.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+CSS Modules: A CSS naming convention that scopes styles to the component level.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Loader Component: A reusable component to display a loading indicator while fetching data.
 
-### `npm run eject`
+Auth Context: Manages the authentication state and provides authentication-related functions.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Private Route: Wraps a route component and checks if the user is authenticated before rendering it.
+react-router-dom: A routing library for React applications.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Usage
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+As you scroll down the page, new items will be loaded dynamically and added to the existing list.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+A loader component will be displayed while fetching data.
 
-## Learn More
+When you reach the end of the page, the application will make another API call to load more items.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The Auth Context provides the login, logout, and isAuthenticated functions to manage the authentication state.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Future Scope:
+
+- Optimizing the number of API Calls;
