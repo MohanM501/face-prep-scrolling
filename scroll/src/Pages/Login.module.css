@@ -1,13 +1,15 @@
 .container{
     width: 50%;
     margin: auto;
-    border:2px solid aqua;
+    border:0px solid aqua;
+    border-radius: 30px;
     padding:10px 0px 20px 0px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 .container>input{
     height:40px;
     border-radius: 10px;
+    padding:10px 20px 10px 20px;
     text-align: center;
     color:blue;
 }
@@ -26,8 +28,7 @@
 @media (max-width:600px){
     .container{
         width:95%;
-        padding:0px 0px 10px 0px;
-        border:1px solid aqua;
+        padding:10px 0px 10px 0px;
     }
     .container>input{
         height:20px;

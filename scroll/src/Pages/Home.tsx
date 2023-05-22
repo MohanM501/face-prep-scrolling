@@ -5,7 +5,7 @@ import axios from "axios";
 import HomeStyles from "./Home.module.css";
 import Loader from '../Components/Loader';
 
-let url=`https://randomuser.me/api/?results=5`;
+
 
 type Name={
     first:string;
@@ -25,6 +25,38 @@ const Home: React.FC = () => {
   let [data,setData]=useState<FirstLevel[]>([]); // Array of multiple objects;
   let [page,setPage]=useState(1);
   let [isLoading,setLoading]=useState(false);
+  let [Results,setResults]=useState(10);
+  const [windowSize, setWindowSize] = useState([
+    window.innerWidth,
+    window.innerHeight,
+  ]);
+  let url=`https://randomuser.me/api/?results=${Results}`;
+
+  // Responsiveness
+  useEffect(() => {
+    
+    const handleWindowResize = () => {
+      setWindowSize([window.innerWidth, window.innerHeight]);
+    };
+
+    window.addEventListener('resize', handleWindowResize);
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+    
+  },[]);
+  console.log(windowSize[0],"windowSize");
+  useEffect(()=>{
+    if(windowSize[0]<=600){
+      setResults(5);
+    }else if(windowSize[0]>600 && windowSize[0]<1000){
+      setResults(10);
+    }else{
+      setResults(20);
+    }
+  },[windowSize[0]])
+  
   
   let getData=(page:number)=>{
      
@@ -75,12 +107,12 @@ const Home: React.FC = () => {
   // To call initial data during first time rendering;
   useEffect(()=>{
     getData(page);
-  },[])
-  
+  },[Results])
+
 
   return (
-    <div>
-       
+    <div >
+      <div className={HomeStyles.Container}>
       {
           data.length>0 && data.map((item,ind)=>{
               return (
@@ -93,6 +125,7 @@ const Home: React.FC = () => {
               )
           })    
       }
+      </div>
       {isLoading?<Loader/>:""} 
     </div>
 

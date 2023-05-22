@@ -1,3 +1,9 @@
+.Container{
+    overflow: scroll;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
 .list{
     display: flex;
     justify-content: space-around;
@@ -5,6 +11,8 @@
     margin:0px 30px 30px 30px;
     height:100px;
     border:2px solid grey;
+    border-radius: 20px;
+    overflow: hidden;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
@@ -13,6 +21,10 @@
 }
 
 @media (max-width:600px){
+    .Container{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
     .list{
         height: 80px;
         margin-bottom: 20px;
@@ -20,6 +32,10 @@
 }
 
 @media (min-width:601px) and (max-width:1000px){
+    .Container{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
     .list{
         height: 80px;
         margin-bottom: 20px;

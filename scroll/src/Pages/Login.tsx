@@ -19,7 +19,7 @@ const Login = () => {
         // Fake login credentials;
         if(username==="foo" && password==="bar"){
             login();
-            alert("succesfully logged in")
+            alert("succesfully logged in; You can now access the Home Page")
         }else{
             alert("Invalid Credentials");
         }  
